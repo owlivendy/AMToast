@@ -1,29 +1,26 @@
 {
   "name": "AMToast",
   "version": "0.1.0",
-  "summary": "A short description of AMToast.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/sxf/AMToast",
+  "summary": "A simple and customizable toast library for iOS",
+  "description": "AMToast is a simple and customizable toast library for iOS. It supports:\n- Multiple positions (top and center)\n- Queue-based display for multiple toasts\n- Customizable styles (corner radius, background color)\n- Custom view support\n- Screen rotation adaptation",
+  "homepage": "https://github.com/yourusername/AMToast",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "sxf": "146811+owls@user.noreply.gitee.com"
+    "shenxiaofei": "your.email@example.com"
   },
   "source": {
-    "git": "https://github.com/sxf/AMToast.git",
+    "git": "https://github.com/yourusername/AMToast.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "12.0"
+    "ios": "9.0"
   },
   "swift_versions": "5.0",
-  "source_files": "AMToast/Classes/**/*.swift",
-  "frameworks": [
-    "UIKit",
-    "Foundation"
-  ],
+  "source_files": "AMToast/Classes/**/*",
+  "frameworks": "UIKit",
   "subspecs": [
     {
       "name": "resources",
