@@ -21,12 +21,10 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/sxf/AMToast'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/owlivendy/AMToast'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'sxf' => '146811+owls@user.noreply.gitee.com' }
-  s.source           = { :git => 'https://github.com/sxf/AMToast.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'owlivendy' => 'owlivendy@gmail.com' }
+  s.source           = { :git => 'https://github.com/owlivendy/AMToast.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '12.0'
   s.swift_version = '5.0'
