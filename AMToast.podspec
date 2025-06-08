@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'AMToast'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of AMToast.'
+  s.summary          = 'A simple and customizable toast library for iOS'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,19 +18,25 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+AMToast is a simple and customizable toast library for iOS. It supports:
+- Multiple positions (top and center)
+- Queue-based display for multiple toasts
+- Customizable styles (corner radius, background color)
+- Custom view support
+- Screen rotation adaptation
                        DESC
 
-  s.homepage         = 'https://github.com/owlivendy/AMToast'
+  s.homepage         = 'https://github.com/yourusername/AMToast'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'owlivendy' => 'owlivendy@gmail.com' }
-  s.source           = { :git => 'https://github.com/owlivendy/AMToast.git', :tag => s.version.to_s }
+  s.author           = { 'shenxiaofei' => 'your.email@example.com' }
+  s.source           = { :git => 'https://github.com/yourusername/AMToast.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '9.0'
   s.swift_version = '5.0'
 
-  s.source_files = 'AMToast/Classes/**/*.swift'
-  s.frameworks = 'UIKit', 'Foundation'
+  s.source_files = 'AMToast/Classes/**/*'
+  
+  s.frameworks = 'UIKit'
 #   s.dependency 'SnapKit'
 
   s.subspec 'resources' do |res|
