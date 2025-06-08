@@ -20,4 +20,8 @@ public struct AMToastConfig {
             }
         }
     }
+    public struct Position {
+        public static var topMarginPortrait: CGFloat = 60.0
+        public static var topMarginLandscape: CGFloat = 20.0
+    }
 }

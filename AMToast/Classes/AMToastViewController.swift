@@ -1,22 +1,22 @@
 import UIKit
 
-class AMToastViewController: UIViewController {
+public class AMToastViewController: UIViewController {
     private var toastViews: [AMToastViewPosition: [UIView]] = [:]
     private var toast_centerYs: [AMToastViewPosition: [NSLayoutConstraint]] = [:]
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
         view.isUserInteractionEnabled = false
     }
     
-    func addToastViewToQueue(_ toastView: UIView, position: AMToastViewPosition, duration: TimeInterval, delay: TimeInterval) {
+    public func addToastViewToQueue(_ toastView: UIView, position: AMToastViewPosition, duration: TimeInterval, delay: TimeInterval) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) {
             self.addToastViewToQueue(toastView, position: position, duration: duration)
         }
     }
     
-    func addToastViewToQueue(_ toastView: UIView, position: AMToastViewPosition, duration: TimeInterval) {
+    public func addToastViewToQueue(_ toastView: UIView, position: AMToastViewPosition, duration: TimeInterval) {
         let existingViews = toastViews[position] ?? []
         let centerYConstraints = toast_centerYs[position] ?? []
         
@@ -58,7 +58,9 @@ class AMToastViewController: UIViewController {
         if position == .center {
             vertical_constraint = toastView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
         } else {
-            vertical_constraint = toastView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100);
+            let isLandscape = UIDevice.current.orientation.isLandscape
+            let topMargin = isLandscape ? AMToastConfig.Position.topMarginLandscape : AMToastConfig.Position.topMarginPortrait
+            vertical_constraint = toastView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: topMargin)
         }
         
         if toast_centerYs[position] != nil {

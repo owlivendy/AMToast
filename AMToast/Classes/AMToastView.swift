@@ -1,7 +1,7 @@
 import UIKit
 
-class AMToastView: UIView {
-    var contentInsets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15) {
+public class AMToastView: UIView {
+    public var contentInsets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15) {
         didSet {
             content_top?.constant = contentInsets.top
             content_bottom?.constant = contentInsets.bottom
@@ -14,11 +14,12 @@ class AMToastView: UIView {
     private var content_leading: NSLayoutConstraint?
     private var content_trailing: NSLayoutConstraint?
     
-    var customView: UIView? {
+    public var customView: UIView? {
         didSet {
             oldValue?.removeFromSuperview()
             if let customView = customView {
                 addSubview(customView)
+                customView.translatesAutoresizingMaskIntoConstraints = false
                 content_top = customView.topAnchor.constraint(equalTo: self.topAnchor, constant: contentInsets.top)
                 content_bottom = self.bottomAnchor.constraint(equalTo: customView.bottomAnchor, constant: contentInsets.bottom)
                 content_leading = customView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: contentInsets.left)
