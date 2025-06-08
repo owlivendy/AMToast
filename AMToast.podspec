@@ -26,10 +26,10 @@ AMToast is a simple and customizable toast library for iOS. It supports:
 - Screen rotation adaptation
                        DESC
 
-  s.homepage         = 'https://github.com/yourusername/AMToast'
+  s.homepage         = 'https://github.com/owlivendy/AMToast'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'shenxiaofei' => 'your.email@example.com' }
-  s.source           = { :git => 'https://github.com/yourusername/AMToast.git', :tag => s.version.to_s }
+  s.author           = { 'owlivendy' => 'owlivendy@gmail.com' }
+  s.source           = { :git => 'https://github.com/owlivendy/AMToast.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
   s.swift_version = '5.0'
