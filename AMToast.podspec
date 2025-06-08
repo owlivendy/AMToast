@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AMToast'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A simple and customizable toast library for iOS'
 
 # This description is used to generate tags and improve search results.
@@ -35,15 +35,11 @@ AMToast is a simple and customizable toast library for iOS. It supports:
   s.swift_version = '5.0'
 
   s.source_files = 'AMToast/Classes/**/*'
+  s.resource_bundles = {
+    'AMToast' => ['AMToast/Assets/*.png']
+  }
   
   s.frameworks = 'UIKit'
 #   s.dependency 'SnapKit'
-
-  s.subspec 'resources' do |res|
-    res.resource_bundles = {
-      'AMToast' => ['AMToast/Assets/*.png']
-    }
-    
-  end
 
 end
