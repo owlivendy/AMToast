@@ -19,6 +19,21 @@ A simple and customizable toast library for iOS.
 
 ## Installation
 
+### Swift Package Manager
+
+Add the following to your `Package.swift` file:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/owlivendy/AMToast.git", from: "0.2.2")
+]
+```
+
+Or in Xcode:
+1. Go to File > Swift Packages > Add Package Dependency
+2. Enter the repository URL: `https://github.com/owlivendy/AMToast.git`
+3. Select the version you want to use
+
 ### CocoaPods
 
 ```ruby

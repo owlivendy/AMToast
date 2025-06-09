@@ -5,6 +5,8 @@
 //  Created by shen xiaofei on 2025/6/3.
 //
 
+import UIKit
+
 public struct AMToastConfig {
     public static var defaultDuration = 2.0
     public static var successDuration = 2.0

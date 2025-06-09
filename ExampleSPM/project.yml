@@ -1,0 +1,19 @@
+name: ExampleSPM
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: 9.0
+
+targets:
+  ExampleSPM:
+    type: application
+    platform: iOS
+    sources:
+      - path: .
+    settings:
+      base:
+        INFOPLIST_FILE: Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.exampleSPM
+    dependencies:
+      - package: AMToast
+        path: .. 

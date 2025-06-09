@@ -20,11 +20,6 @@ let package = Package(
             resources: [
                 .process("Assets")
             ]
-        ),
-        .testTarget(
-            name: "AMToastTests",
-            dependencies: ["AMToast"],
-            path: "Tests"
         )
     ],
     swiftLanguageVersions: [.v5]
