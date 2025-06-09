@@ -34,9 +34,9 @@ AMToast is a simple and customizable toast library for iOS. It supports:
   s.ios.deployment_target = '9.0'
   s.swift_version = '5.0'
 
-  s.source_files = 'AMToast/Classes/**/*'
+  s.source_files = 'Sources/AMToast/**/*.swift'
   s.resource_bundles = {
-    'AMToast' => ['AMToast/Assets/*.png']
+    'AMToast' => ['Sources/AMToast/Assets/*.png']
   }
   
   s.frameworks = 'UIKit'
