@@ -15,6 +15,37 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        // 自动显示测试用的 Toast
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            // 显示基本 Toast
+            AMToast.show(with: "Test Toast")
+            
+            // 显示成功 Toast
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                AMToast.showSuccess(with: "Success Message")
+            }
+            
+            // 显示多个 Toast
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                AMToast.show(with: "First Toast")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    AMToast.show(with: "Second Toast")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        AMToast.show(with: "Third Toast")
+                    }
+                }
+            }
+            
+            // 显示自定义视图 Toast
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                let customView = UIView()
+                customView.backgroundColor = .blue
+                customView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                customView.accessibilityIdentifier = "Custom View"
+                AMToast.show(with: customView)
+            }
+        }
     }
     
     private func setupUI() {

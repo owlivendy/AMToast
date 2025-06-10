@@ -10,32 +10,60 @@ import XCTest
 final class ExampleSPMUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        // 在 UI 测试中，最好在失败时立即停止
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // 每个测试用例结束后的清理工作
     }
 
     @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testBasicToast() throws {
+        // 启动应用
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        // 等待 Toast 显示
+        let toast = app.staticTexts["Test Toast"]
+        XCTAssertTrue(toast.waitForExistence(timeout: 2))
     }
-
+    
     @MainActor
-    func testLaunchPerformance() throws {
-        // This measures how long it takes to launch your application.
-        measure(metrics: [XCTApplicationLaunchMetric()]) {
-            XCUIApplication().launch()
-        }
+    func testSuccessToast() throws {
+        // 启动应用
+        let app = XCUIApplication()
+        app.launch()
+        
+        // 等待成功 Toast 显示
+        let toast = app.staticTexts["Success Message"]
+        XCTAssertTrue(toast.waitForExistence(timeout: 2))
+    }
+    
+    @MainActor
+    func testMultipleToasts() throws {
+        // 启动应用
+        let app = XCUIApplication()
+        app.launch()
+        
+        // 检查多个 Toast 的显示
+        let firstToast = app.staticTexts["First Toast"]
+        let secondToast = app.staticTexts["Second Toast"]
+        let thirdToast = app.staticTexts["Third Toast"]
+        
+        XCTAssertTrue(firstToast.waitForExistence(timeout: 2))
+        XCTAssertTrue(secondToast.waitForExistence(timeout: 2))
+        XCTAssertTrue(thirdToast.waitForExistence(timeout: 2))
+    }
+    
+    @MainActor
+    func testCustomViewToast() throws {
+        // 启动应用
+        let app = XCUIApplication()
+        app.launch()
+        
+        // 检查自定义视图的 Toast
+        let customView = app.otherElements["Custom View"]
+        XCTAssertTrue(customView.waitForExistence(timeout: 2))
     }
 }
