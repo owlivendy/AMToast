@@ -1,5 +1,5 @@
 PODS:
-  - AMToast (0.2.1)
+  - AMToast (0.2.2)
   - Nimble (10.0.0)
   - Quick (5.0.1)
 
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AMToast: cd590f7f48eefc78387a651608d092b153242ca4
+  AMToast: ddfbaac7df8c91f09a8a2b41c62696ab977a0b84
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
 

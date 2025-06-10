@@ -1,6 +1,6 @@
 {
   "name": "AMToast",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "summary": "A simple and customizable toast library for iOS",
   "description": "AMToast is a simple and customizable toast library for iOS. It supports:\n- Multiple positions (top and center)\n- Queue-based display for multiple toasts\n- Customizable styles (corner radius, background color)\n- Custom view support\n- Screen rotation adaptation",
   "homepage": "https://github.com/owlivendy/AMToast",
@@ -13,16 +13,16 @@
   },
   "source": {
     "git": "https://github.com/owlivendy/AMToast.git",
-    "tag": "0.2.1"
+    "tag": "0.2.2"
   },
   "platforms": {
     "ios": "9.0"
   },
   "swift_versions": "5.0",
-  "source_files": "AMToast/Classes/**/*",
+  "source_files": "Sources/AMToast/**/*.swift",
   "resource_bundles": {
     "AMToast": [
-      "AMToast/Assets/*.png"
+      "Sources/AMToast/Assets/*.png"
     ]
   },
   "frameworks": "UIKit",
