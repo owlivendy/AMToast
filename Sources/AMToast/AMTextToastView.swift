@@ -6,8 +6,8 @@ class AMTextToastView: AMToastView {
     init(message: String) {
         let label = UILabel()
         label.text = message
-        label.textColor = AMToastConfig.ToastViewStyle.TextColor.current
-        label.font = AMToastConfig.ToastViewStyle.Font.current
+        label.textColor = AMToastConfig.ToastViewStyle.textColor
+        label.font = AMToastConfig.ToastViewStyle.textFont
         label.numberOfLines = 0
         label.textAlignment = .center
         label.sizeToFit()
@@ -20,11 +20,5 @@ class AMTextToastView: AMToastView {
     required init?(coder: NSCoder) {
         messageLabel = UILabel()
         super.init(coder: coder)
-    }
-    
-    public override func updateAppearance() {
-        super.updateAppearance()
-        messageLabel.textColor = AMToastConfig.ToastViewStyle.TextColor.current
-        messageLabel.font = AMToastConfig.ToastViewStyle.Font.current
     }
 } 

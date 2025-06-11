@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "AMToast",
     platforms: [
-        .iOS(.v9)
+        .iOS(.v13)
     ],
     products: [
         .library(
@@ -20,6 +20,9 @@ let package = Package(
     targets: [
         .target(
             name: "AMToast",
-            dependencies: [])
+            dependencies: [],
+            resources: [
+                .process("Resources")
+            ])
     ]
 ) 

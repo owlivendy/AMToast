@@ -33,12 +33,12 @@ AMToast is a simple and customizable toast library for iOS. It supports:
   s.author           = { 'owlivendy' => 'owlivendy@gmail.com' }
   s.source           = { :git => 'https://github.com/owlivendy/AMToast.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
 
   s.source_files = 'Sources/AMToast/**/*.swift'
   s.resource_bundles = {
-    'AMToast' => ['Sources/AMToast/Assets/*.png']
+    'AMToast' => ['Sources/AMToast/Resources/*.png']
   }
   
   s.frameworks = 'UIKit'

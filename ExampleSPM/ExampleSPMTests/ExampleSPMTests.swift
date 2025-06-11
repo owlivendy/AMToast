@@ -16,7 +16,11 @@ final class ExampleSPMTests: XCTestCase {
         AMToastConfig.defaultDuration = 2.0
         AMToastConfig.successDuration = 2.0
         AMToastConfig.ToastViewStyle.cornerRadius = 18.0
-        AMToastConfig.ToastViewStyle.backgroundColor = UIColor.black.withAlphaComponent(0.94)
+        AMToastConfig.ToastViewStyle.backgroundColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ?
+                UIColor(white: 0.2, alpha: 0.94) :
+                UIColor.black.withAlphaComponent(0.94)
+        }
     }
 
     override func tearDownWithError() throws {

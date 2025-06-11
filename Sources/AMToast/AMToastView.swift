@@ -71,27 +71,18 @@ public class AMToastView: UIView {
     }
     
     func setupUI() {
-        backgroundColor = AMToastConfig.ToastViewStyle.BackgroundColor.current
+        backgroundColor = AMToastConfig.ToastViewStyle.backgroundColor
         layer.cornerRadius = AMToastConfig.ToastViewStyle.cornerRadius
         clipsToBounds = true
     }
     
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-        if #available(iOS 13.0, *) {
-            if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
-                backgroundColor = AMToastConfig.ToastViewStyle.BackgroundColor.current
-                updateAppearance()
-            }
-        }
-    }
-    
-    /// 更新视图外观
-    /// - 当系统主题发生变化时，会自动调用此方法
-    /// - 也可以手动调用此方法来更新视图外观
-    /// - 子类应该重写此方法来更新特定的外观属性
-    public func updateAppearance() {
-        // 默认实现为空，由子类根据需要重写
-    }
+//    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//        
+//        if #available(iOS 13.0, *) {
+//            if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+//                backgroundColor = AMToastConfig.ToastViewStyle.backgroundColor
+//            }
+//        }
+//    }
 } 

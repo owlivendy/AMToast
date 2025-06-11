@@ -29,26 +29,31 @@ class ViewController: UIViewController {
                 AMToast.show(with: "已将圆角修改为5", position: .center)
             }),
             ("修改浅色模式背景色为红色", {
-                AMToastConfig.ToastViewStyle.BackgroundColor.light = UIColor.red.withAlphaComponent(0.94)
+                AMToastConfig.ToastViewStyle.backgroundColor = UIColor { traitCollection in
+                    return traitCollection.userInterfaceStyle == .dark ?
+                        UIColor(white: 0.2, alpha: 0.94) :
+                        UIColor.red.withAlphaComponent(0.94)
+                }
                 AMToast.show(with: "已将浅色模式背景色修改为红色", position: .center)
             }),
             ("修改深色模式背景色为蓝色", {
-                AMToastConfig.ToastViewStyle.BackgroundColor.dark = UIColor.blue.withAlphaComponent(0.94)
+                AMToastConfig.ToastViewStyle.backgroundColor = UIColor { traitCollection in
+                    return traitCollection.userInterfaceStyle == .dark ?
+                        UIColor.blue.withAlphaComponent(0.94) :
+                        UIColor.black.withAlphaComponent(0.94)
+                }
                 AMToast.show(with: "已将深色模式背景色修改为蓝色", position: .center)
             }),
             ("修改字体大小为16", {
-                AMToastConfig.ToastViewStyle.Font.light = UIFont.systemFont(ofSize: 16)
-                AMToastConfig.ToastViewStyle.Font.dark = UIFont.systemFont(ofSize: 16)
+                AMToastConfig.ToastViewStyle.textFont = UIFont.systemFont(ofSize: 16)
                 AMToast.show(with: "已将字体大小修改为16", position: .center)
             }),
             ("修改字体大小为12", {
-                AMToastConfig.ToastViewStyle.Font.light = UIFont.systemFont(ofSize: 12)
-                AMToastConfig.ToastViewStyle.Font.dark = UIFont.systemFont(ofSize: 12)
+                AMToastConfig.ToastViewStyle.textFont = UIFont.systemFont(ofSize: 12)
                 AMToast.show(with: "已将字体大小修改为12", position: .center)
             }),
             ("使用粗体字体", {
-                AMToastConfig.ToastViewStyle.Font.light = UIFont.boldSystemFont(ofSize: 14)
-                AMToastConfig.ToastViewStyle.Font.dark = UIFont.boldSystemFont(ofSize: 14)
+                AMToastConfig.ToastViewStyle.textFont = UIFont.boldSystemFont(ofSize: 14)
                 AMToast.show(with: "已切换为粗体字体", position: .center)
             }),
             ("恢复默认样式", {
