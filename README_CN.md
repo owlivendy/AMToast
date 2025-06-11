@@ -4,13 +4,15 @@
 
 一个简单且可自定义的 iOS Toast 提示库。
 
-![队列显示效果](https://raw.githubusercontent.com/owlivendy/AMToast/master/Resources/queue_display.gif)
+![队列显示效果](./assets//queue_display.gif)
 
 ## 特性
 
 - 支持多个显示位置（顶部和中间）
 - 基于队列的多 Toast 显示
 - 可自定义样式（圆角、背景颜色）
+- 支持深色模式
+- 可自定义字体大小和样式
 - 支持自定义视图
 - 支持屏幕旋转适配
 
@@ -63,12 +65,34 @@ AMToast.showSuccess(with: "操作成功！")
 // 自定义圆角
 AMToastConfig.ToastViewStyle.cornerRadius = 20
 
-// 自定义背景颜色
-AMToastConfig.ToastViewStyle.backgroundColor = UIColor.red.withAlphaComponent(0.94)
+// 自定义浅色模式背景色
+AMToastConfig.ToastViewStyle.BackgroundColor.light = UIColor.red.withAlphaComponent(0.94)
+
+// 自定义深色模式背景色
+AMToastConfig.ToastViewStyle.BackgroundColor.dark = UIColor(white: 0.2, alpha: 0.94)
+
+// 自定义浅色模式文字颜色
+AMToastConfig.ToastViewStyle.TextColor.light = UIColor.white
+
+// 自定义深色模式文字颜色
+AMToastConfig.ToastViewStyle.TextColor.dark = UIColor.white
+
+// 自定义浅色模式字体大小
+AMToastConfig.ToastViewStyle.Font.light = UIFont.systemFont(ofSize: 16)
+
+// 自定义深色模式字体大小
+AMToastConfig.ToastViewStyle.Font.dark = UIFont.systemFont(ofSize: 16)
+
+// 使用粗体字体
+AMToastConfig.ToastViewStyle.Font.light = UIFont.boldSystemFont(ofSize: 14)
+AMToastConfig.ToastViewStyle.Font.dark = UIFont.boldSystemFont(ofSize: 14)
 
 // 自定义位置边距
 AMToastConfig.Position.topMarginPortrait = 100
 AMToastConfig.Position.topMarginLandscape = 20
+
+// 重置所有配置为默认值
+AMToastConfig.resetToDefault()
 ```
 
 ### 自定义视图

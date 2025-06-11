@@ -4,13 +4,15 @@
 
 A simple and customizable toast library for iOS.
 
-![Queue Display](https://raw.githubusercontent.com/owlivendy/AMToast/master/Resources/queue_display.gif)
+![Queue Display](./assets/queue_display.gif)
 
 ## Features
 
 - Multiple positions (top and center)
 - Queue-based display for multiple toasts
 - Customizable styles (corner radius, background color)
+- Dark mode support
+- Customizable font size and style
 - Custom view support
 - Screen rotation adaptation
 
@@ -63,12 +65,34 @@ AMToast.showSuccess(with: "Operation successful!")
 // Customize corner radius
 AMToastConfig.ToastViewStyle.cornerRadius = 20
 
-// Customize background color
-AMToastConfig.ToastViewStyle.backgroundColor = UIColor.red.withAlphaComponent(0.94)
+// Customize background color for light mode
+AMToastConfig.ToastViewStyle.BackgroundColor.light = UIColor.red.withAlphaComponent(0.94)
+
+// Customize background color for dark mode
+AMToastConfig.ToastViewStyle.BackgroundColor.dark = UIColor(white: 0.2, alpha: 0.94)
+
+// Customize text color for light mode
+AMToastConfig.ToastViewStyle.TextColor.light = UIColor.white
+
+// Customize text color for dark mode
+AMToastConfig.ToastViewStyle.TextColor.dark = UIColor.white
+
+// Customize font size for light mode
+AMToastConfig.ToastViewStyle.Font.light = UIFont.systemFont(ofSize: 16)
+
+// Customize font size for dark mode
+AMToastConfig.ToastViewStyle.Font.dark = UIFont.systemFont(ofSize: 16)
+
+// Use bold font
+AMToastConfig.ToastViewStyle.Font.light = UIFont.boldSystemFont(ofSize: 14)
+AMToastConfig.ToastViewStyle.Font.dark = UIFont.boldSystemFont(ofSize: 14)
 
 // Customize position margins
 AMToastConfig.Position.topMarginPortrait = 100
 AMToastConfig.Position.topMarginLandscape = 20
+
+// Reset all configurations to default
+AMToastConfig.resetToDefault()
 ```
 
 ### Custom View

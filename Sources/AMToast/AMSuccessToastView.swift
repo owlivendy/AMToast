@@ -20,8 +20,8 @@ class AMSuccessToastView: AMToastView {
         // 创建消息标签
         let label = UILabel()
         label.text = message
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 14)
+        label.textColor = AMToastConfig.ToastViewStyle.TextColor.current
+        label.font = AMToastConfig.ToastViewStyle.Font.current
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(label)
@@ -49,5 +49,11 @@ class AMSuccessToastView: AMToastView {
         successImage = UIImageView()
         messageLabel = UILabel()
         super.init(coder: coder)
+    }
+    
+    public override func updateAppearance() {
+        super.updateAppearance()
+        messageLabel.textColor = AMToastConfig.ToastViewStyle.TextColor.current
+        messageLabel.font = AMToastConfig.ToastViewStyle.Font.current
     }
 } 
