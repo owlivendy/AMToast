@@ -18,7 +18,7 @@ A simple and customizable toast library for iOS.
 
 ## Requirements
 
-- iOS 9.0+
+- iOS 13.0+
 - Swift 5.0+
 
 ## Installation
