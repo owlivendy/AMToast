@@ -1,5 +1,7 @@
 # AMToast
 
+[English](README.md) | [简体中文](README_CN.md)
+
 A simple and customizable toast library for iOS.
 
 ![Queue Display](https://raw.githubusercontent.com/owlivendy/AMToast/master/Resources/queue_display.gif)
