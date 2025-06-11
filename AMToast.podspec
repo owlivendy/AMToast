@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AMToast'
-  s.version          = '0.2.4'
+  s.version          = '0.3.0'
   s.summary          = 'A simple and customizable toast library for iOS'
 
 # This description is used to generate tags and improve search results.
@@ -22,6 +22,8 @@ AMToast is a simple and customizable toast library for iOS. It supports:
 - Multiple positions (top and center)
 - Queue-based display for multiple toasts
 - Customizable styles (corner radius, background color)
+- Dark mode support
+- Customizable font size and style
 - Custom view support
 - Screen rotation adaptation
                        DESC

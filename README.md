@@ -29,7 +29,7 @@ Add the following to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/owlivendy/AMToast.git", from: "0.2.2")
+    .package(url: "https://github.com/owlivendy/AMToast.git", from: "0.3.0")
 ]
 ```
 
