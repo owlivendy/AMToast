@@ -23,7 +23,11 @@ public struct AMToastConfig {
         }
         
         // 文字颜色配置
-        public static var textColor: UIColor = .label
+        public static var textColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ?
+                .label :
+                .white
+        }
         
         // 字体配置
         public static var textFont: UIFont = UIFont.systemFont(ofSize: 14)
@@ -52,7 +56,7 @@ public struct AMToastConfig {
                 UIColor(white: 0.2, alpha: 0.94) :
                 UIColor.black.withAlphaComponent(0.94)
         }
-        ToastViewStyle.textColor = .label
+        ToastViewStyle.textColor = AMToastConfig.ToastViewStyle.textColor
         ToastViewStyle.textFont = UIFont.systemFont(ofSize: 14)
         Window.defaultWindowLevel = UIWindow.Level.statusBar - 1
         Position.topMarginPortrait = 60.0
