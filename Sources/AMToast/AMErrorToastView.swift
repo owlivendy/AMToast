@@ -1,22 +1,19 @@
 import UIKit
 
-class AMSuccessToastView: AMToastView {
-    private let successImage: UIImageView
+class AMErrorToastView: AMToastView {
+    private let errorImage: UIImageView
     private let messageLabel: UILabel
     
     init(message: String) {
-        // 创建容器视图
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
-        // 创建成功图标
         let imageView = UIImageView()
-        imageView.image = UIImage.am_toastImage(named: "success")
+        imageView.image = UIImage.am_toastImage(named: "error-circle-filled")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageView)
-        successImage = imageView
+        errorImage = imageView
         
-        // 创建消息标签
         let label = UILabel(frame: .zero)
         label.text = message
         label.textColor = AMToastConfig.ToastViewStyle.textColor
@@ -31,16 +28,13 @@ class AMSuccessToastView: AMToastView {
         
         super.init(frame: .zero)
         
-        // 设置约束
         NSLayoutConstraint.activate([
-            // 成功图标约束
-            successImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            successImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            successImage.topAnchor.constraint(greaterThanOrEqualTo: containerView.topAnchor),
-            successImage.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor),
+            errorImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            errorImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            errorImage.topAnchor.constraint(greaterThanOrEqualTo: containerView.topAnchor),
+            errorImage.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor),
             
-            // 消息标签约束
-            messageLabel.leadingAnchor.constraint(equalTo: successImage.trailingAnchor, constant: 5),
+            messageLabel.leadingAnchor.constraint(equalTo: errorImage.trailingAnchor, constant: 5),
             messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             messageLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
             messageLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
@@ -50,8 +44,8 @@ class AMSuccessToastView: AMToastView {
     }
     
     required init?(coder: NSCoder) {
-        successImage = UIImageView()
+        errorImage = UIImageView()
         messageLabel = UILabel(frame: .zero)
         super.init(coder: coder)
     }
-} 
+}

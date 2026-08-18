@@ -22,4 +22,9 @@ public final class AMToast {
         let successView = AMSuccessToastView(message: message)
         AMToastWindow.shared.addToastViewToQueue(successView, position: position, duration: duration)
     }
+    
+    public static func showError(with message: String, duration: TimeInterval = AMToastConfig.errorDuration, position: AMToastViewPosition = .center) {
+        let errorView = AMErrorToastView(message: message)
+        AMToastWindow.shared.addToastViewToQueue(errorView, position: position, duration: duration)
+    }
 } 

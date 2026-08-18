@@ -20,8 +20,7 @@ public class AMToastViewController: UIViewController {
         let existingViews = toastViews[position] ?? []
         let centerYConstraints = toast_centerYs[position] ?? []
         
-        
-        let toastViewSize = toastView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        let toastViewSize = fittedSize(for: toastView)
         if !existingViews.isEmpty {
             // 如果队列不为空，先移动现有的 toast
             UIView.animate(withDuration: 0.1) {
@@ -69,9 +68,13 @@ public class AMToastViewController: UIViewController {
             toast_centerYs[position] = [vertical_constraint]
         }
         
+        let horizontalMargin = AMToastConfig.Position.horizontalMargin
         NSLayoutConstraint.activate([
             vertical_constraint,
-            toastView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            toastView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            // 限制最大宽度，长文案自动换行，避免超出屏幕
+            toastView.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: horizontalMargin),
+            toastView.trailingAnchor.constraint(lessThanOrEqualTo: self.view.trailingAnchor, constant: -horizontalMargin)
         ])
         
         // 设置动画
@@ -83,6 +86,16 @@ public class AMToastViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             self.removeToastView(toastView, position: position)
         }
+    }
+    
+    /// 按屏幕可用最大宽度计算 toast 尺寸，保证换行后的高度准确
+    private func fittedSize(for toastView: UIView) -> CGSize {
+        let maxWidth = max(view.bounds.width - AMToastConfig.Position.horizontalMargin * 2, 0)
+        return toastView.systemLayoutSizeFitting(
+            CGSize(width: maxWidth, height: UIView.layoutFittingCompressedSize.height),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .fittingSizeLevel
+        )
     }
     
     private func removeToastView(_ toastView: UIView, position: AMToastViewPosition) {

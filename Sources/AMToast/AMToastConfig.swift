@@ -10,6 +10,7 @@ import UIKit
 public struct AMToastConfig {
     public static var defaultDuration = 2.0
     public static var successDuration = 2.0
+    public static var errorDuration = 2.0
     
     //toastview style default
     public struct ToastViewStyle {
@@ -44,12 +45,15 @@ public struct AMToastConfig {
     public struct Position {
         public static var topMarginPortrait: CGFloat = 60.0
         public static var topMarginLandscape: CGFloat = 20.0
+        /// Toast 左右边距，用于限制最大宽度，避免长文案超出屏幕
+        public static var horizontalMargin: CGFloat = 20.0
     }
     
     // 重置所有配置为默认值
     public static func resetToDefault() {
         defaultDuration = 2.0
         successDuration = 2.0
+        errorDuration = 2.0
         ToastViewStyle.cornerRadius = 18.0
         ToastViewStyle.backgroundColor = UIColor { traitCollection in
             return traitCollection.userInterfaceStyle == .dark ?
@@ -61,5 +65,6 @@ public struct AMToastConfig {
         Window.defaultWindowLevel = UIWindow.Level.statusBar - 1
         Position.topMarginPortrait = 60.0
         Position.topMarginLandscape = 20.0
+        Position.horizontalMargin = 20.0
     }
 }
